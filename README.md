@@ -26,7 +26,7 @@
 | house_number                 | string       | null: false |  
 | building_name                | string       |             |
 | phone_number                 | string       | null: false |
-| item_purchases               | reference   | null: false, foreign_key: true | 
+| item_purchase          　    | reference   | null: false, foreign_key: true | 
 ### Association
 - belongs_to :item_purchase
 
