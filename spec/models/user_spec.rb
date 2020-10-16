@@ -94,11 +94,5 @@ describe User, type: :model do
       @user.valid?
       expect(@user.errors.full_messages).to include('First name kana is invalid')
     end
-
-    it 'family_name_kanaが全角カタカナでなければ登録できないこと' do
-      @user.family_name_kana = 'あいうえお'
-      @user.valid?
-      expect(@user.errors.full_messages).to include('Family name kana is invalid')
-    end
   end
 end
