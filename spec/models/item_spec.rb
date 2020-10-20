@@ -83,31 +83,31 @@ describe Item, type: :model do
   end
 
   it 'category_idが１だと登録できないこと' do
-    @item.category_id = '1'
+    @item.category_id = 1
     @item.valid?
     expect(@item.errors.full_messages).to include('Category must be other than 1')
   end
 
   it 'goods_condition_idが１だと登録できないこと' do
-    @item.goods_condition_id = '1'
+    @item.goods_condition_id = 1
     @item.valid?
     expect(@item.errors.full_messages).to include('Goods condition must be other than 1')
   end
 
   it 'postage_type_idが１だと登録できないこと' do
-    @item.postage_type_id = '1'
+    @item.postage_type_id = 1
     @item.valid?
     expect(@item.errors.full_messages).to include('Postage type must be other than 1')
   end
 
   it 'delivery_area_idが１だと登録できないこと' do
-    @item.delivery_area_id = '1'
+    @item.delivery_area_id = 1
     @item.valid?
     expect(@item.errors.full_messages).to include('Delivery area must be other than 1')
   end
 
   it 'preparation_day_idが１だと登録できないこと' do
-    @item.preparation_day_id = '1'
+    @item.preparation_day_id = 1
     @item.valid?
     expect(@item.errors.full_messages).to include('Preparation day must be other than 1')
   end
