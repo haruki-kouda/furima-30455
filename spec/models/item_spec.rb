@@ -71,14 +71,44 @@ describe Item, type: :model do
   end
 
   it 'priceは300以下では登録できないこと' do
-    @item.price = '299'
+    @item.price = 299
     @item.valid?
     expect(@item.errors.full_messages).to include('Price must be greater than 300')
   end
 
   it 'priceは9999999以上では登録できないこと' do
-    @item.price = '10000000'
+    @item.price = 10_000_000
     @item.valid?
     expect(@item.errors.full_messages).to include('Price must be less than 9999999')
+  end
+
+  it 'category_idが１だと登録できないこと' do
+    @item.category_id = '1'
+    @item.valid?
+    expect(@item.errors.full_messages).to include('Category must be other than 1')
+  end
+
+  it 'goods_condition_idが１だと登録できないこと' do
+    @item.goods_condition_id = '1'
+    @item.valid?
+    expect(@item.errors.full_messages).to include('Goods condition must be other than 1')
+  end
+
+  it 'postage_type_idが１だと登録できないこと' do
+    @item.postage_type_id = '1'
+    @item.valid?
+    expect(@item.errors.full_messages).to include('Postage type must be other than 1')
+  end
+
+  it 'delivery_area_idが１だと登録できないこと' do
+    @item.delivery_area_id = '1'
+    @item.valid?
+    expect(@item.errors.full_messages).to include('Delivery area must be other than 1')
+  end
+
+  it 'preparation_day_idが１だと登録できないこと' do
+    @item.preparation_day_id = '1'
+    @item.valid?
+    expect(@item.errors.full_messages).to include('Preparation day must be other than 1')
   end
 end
