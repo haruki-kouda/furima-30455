@@ -28,7 +28,4 @@ class Item < ApplicationRecord
     validates :delivery_area_id
     validates :preparation_day_id 
   end
-  
-  #validates :category_id, :goods_condition_id, :postage_type_id, :delivery_area_id, :preparation_day_id, :numericality, :preparation_day, { other_than: 1 }
-  
 end
