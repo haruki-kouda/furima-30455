@@ -17,7 +17,7 @@ class Item < ApplicationRecord
     validates :postage_type
     validates :delivery_area
     validates :preparation_day
-    validates :price
+    validates :price, format: { with: /\A[0-9]+\z/ },numericality: { only_integer: true ,  greater_than: 300, less_than: 9999999},length:{minimum:3 , maxinum:7}
     validates :image
   end
   
