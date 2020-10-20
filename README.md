@@ -26,8 +26,8 @@
 | house_number                 | string       | null: false |  
 | building_name                | string       |             |
 | phone_number                 | string       | null: false |
-| item_purchase          　    | reference   | null: false, foreign_key: true | 
-### Association
+| item_purchase          　    | reference    | foreign_key: true | 
+### Association 
 - belongs_to :item_purchase
 
 
@@ -42,7 +42,7 @@
 | delivery_area_id   | integer    | null: false |
 | preparation_day_id | integer    | null: false |
 | price              | integer    | null: false |
-| user               | reference   | null: false, foreign_key: true | 
+| user               | reference  | foreign_key: true | 
 ### Association
 - belongs_to :user
 - has_one :item_purchase
@@ -51,8 +51,8 @@
 ## item_purchases テーブル
 | Column          | Type       | Options     |
 | ----------------| ---------- | ------------| 
-| user        | references | null: false, foreign_key: true |
-| item        | references | null: false, foreign_key: true |
+| user            | references | foreign_key: true |
+| item            | references | foreign_key: true |
 ### Association
 - belongs_to :item
 - belongs_to :user
