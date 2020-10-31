@@ -68,4 +68,10 @@ describe Order, type: :model do
     @order.building_name = nil
     expect(@order).to be_valid
   end
+
+  it 'phone_numberにハイフンがある場合は購入できないこと' do
+    @order.phone_number = '090-1234-5678'
+    @order.valid?
+    expect(@order.errors.full_messages).to include('Phone number is invalid')
+  end
 end
